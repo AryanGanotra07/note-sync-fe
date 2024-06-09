@@ -9,12 +9,8 @@ const APP_ROUTES: Route[] = [{
     children: [
       {
         path: '', 
-        redirectTo: 'notes',
-        pathMatch: 'full'
-      },
-      {
-        path: 'notes', 
-        loadChildren: () => import('./modules/notes/notes.module').then(m => m.NotesModule)
+        loadChildren: () => import('./modules/notes/notes.module').then(m => m.NotesModule), 
+      
       }
     ]
 
