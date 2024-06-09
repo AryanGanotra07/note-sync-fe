@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/** sizing */
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/** display - flex */
+.fl-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.fl-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-one {
+    flex: 1 0 0;
+}
+
+.fl-row--end {
+    align-items: end;
+}
+
+.fl-col--end {
+    justify-content: end;
+}
+
+.fl-row--space-between {
+    justify-content: space-between;
+}
+
+.fl-row--middle {
+    align-items: center;
+}
+
+.fl-row--center {
+    justify-content: center;
+}
+
+
+
+
+/** extras */
+.pointer {
+    cursor: pointer;
+}
+
+.txt-c {
+    text-align: center;
+}

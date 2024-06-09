@@ -1,0 +1,16 @@
+
+
+<mat-card class="h-100">
+    <mat-card-content class="h-100">
+        <div *ngIf="note" class="fl-col w-100">
+            <mat-form-field (click)="enableEdit = true"  [appearance]="enableEdit ? 'outline' : 'fill'" class="fl-one w-100">
+                <textarea (focusout)="enableEdit = false; updateNoteEmitter.emit(this.note);" [ngClass]="{'pointer': !enableEdit}"  [readonly]="!enableEdit" #noteTextArea [(ngModel)]="note.content" cdkTextareaAutosize matInput #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="20"
+                cdkAutosizeMaxRows="36" ></textarea>
+            </mat-form-field>
+            <div class="fl-row fl-col--end">
+                <button mat-stroked-button color="warn" (click)="deleteNoteEmitter.emit(this.note)">Delete note</button>
+            </div>
+        </div>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,21 @@
+<mat-drawer-container class="h-100" autosize>
+    <mat-drawer class="drawer" [(opened)]="isDrawerOpen" #drawer mode="side">
+        <div class="fl-col h-100">
+            <mat-selection-list class="fl-one w-100" [multiple]="false" (selectionChange)="selectNote($event.options[0].value)" [hideSingleSelectionIndicator]="true">
+                <mat-list-option [ngClass]="{ 'selected-note': note.id === selectedNote?.id }"  *ngFor="let note of notes; trackNote" class="fl-col w-100" [value]="note">
+                    <span matListItemTitle>{{note.content}}</span>
+                    <span matListItemLine class="note-created-date">{{note.createdDate | date}}</span>
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </mat-drawer>
+
+
+    <mat-drawer-content>
+        <app-notes-detail *ngIf="selectedNote" [note]="selectedNote" (updateNoteEmitter)="updateNote($event)" (deleteNoteEmitter)="deleteNote($event)"></app-notes-detail>
+        <div *ngIf="!selectedNote" class="h-100 w-100 fl-row fl-row--middle fl-row--center">
+            <span *ngIf="notes.length">Please select a note to continue.</span>
+            <span *ngIf="!notes.length">Tap on + to create a note</span>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

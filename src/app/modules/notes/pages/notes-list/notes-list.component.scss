@@ -1,0 +1,21 @@
+
+
+.create-note-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.drawer {
+    width: 20%;
+}
+
+.note-created-date {
+    font-size: small;
+    color: gray;
+}
+
+
+.selected-note {
+    background-color: #e5e4e4 !important;
+}
